@@ -1,0 +1,9 @@
+body {
+    background: #202020;
+    color: white;
+}
+
+.form-container {
+    max-height: 100vh; 
+    overflow-y: auto; 
+}
