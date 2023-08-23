@@ -1,6 +1,7 @@
 import { getConcepts, saveConcept } from "../firebase/firebaseService.js";
 import { showMessage } from "../tooltips/showmessage.js";
 import { displayConcept } from "./displayConcept.js";
+import { addSelectConcept } from "./selectConcepts.js";
 
 
 const btnConcept = document.getElementById('btnSaveConcept');
@@ -24,5 +25,6 @@ btnConcept.addEventListener('click', async () => {
         saveConcept(newConcept.toUpperCase());
         showMessage(newConcept.toUpperCase() + ' guardado')
         displayConcept(newConcept.toUpperCase());
+        addSelectConcept(newConcept.toUpperCase())
     }
 })

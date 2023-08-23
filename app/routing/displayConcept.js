@@ -1,5 +1,4 @@
 import { deleteConcept } from "../firebase/firebaseService.js";
-import { addSelectConcept } from "./selectConcepts.js";
 
 export const displayConcept = (concept) => {
     

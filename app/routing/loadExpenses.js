@@ -29,6 +29,7 @@ export const loadExpenses = () => {
             const amount = expensesForm['expenseAmount'].value;
             saveExpenses(date, concept, detail, amount);
             document.getElementById("expensesForm").reset();
+            showMessage(concept + ' guardado')
         }
     })
 };

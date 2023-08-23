@@ -7,7 +7,7 @@ export const selectConcepts = async () => {
                 let list = '';
                 const concept = doc.data();
                 const conceptslist = document.getElementById('expensesConcept');
-                list = ` <option value="1">${concept.concept}</option>`
+                list = ` <option value="${concept.concept}">${concept.concept}</option>`
                 conceptslist.innerHTML += list;
             });
         } else {
@@ -17,5 +17,11 @@ export const selectConcepts = async () => {
 
 export const addSelectConcept = (concept) => {
     const conceptsList = document.getElementById('expensesConcept');
-    conceptsList.innerHTML += ` <option value="1">${concept}</option>`
+    conceptsList.innerHTML += ` <option value="${concept.concept}">${concept}</option>`
+}
+
+export const deleteSelectConcept = (concept) => {
+    console.log('entro');
+    const selectConcept = document.querySelector(`option[value="${concept}"]`);
+    selectConcept.remove();
 }

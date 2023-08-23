@@ -35,7 +35,7 @@ export const deleteConcept = async (delConcept) => {
             return;
         } 
     });
-    if (!existsConcept) {showMessage(delConcept + ' no se encontro', 'red');}
+    
 }
 
 const deletConc = async (docID) => {
