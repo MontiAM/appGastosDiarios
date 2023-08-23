@@ -20,10 +20,12 @@ import { loadExpenses } from './app/routing/loadExpenses.js'
 import { showListConcepts } from './app/routing/listConcepts.js'
 
 onAuthStateChanged(auth, async (user) => {
-    if (user.email == 'montivero.marcio@gmail.com' || user.email == 'sanbmg@gmail.com') {
-        loginCheck(user)
-        loadExpenses()
-        showListConcepts();
+    if(user){
+        if (user.email == 'montivero.marcio@gmail.com' || user.email == 'sanbmg@gmail.com') {
+            loginCheck(user)
+            loadExpenses() 
+            showListConcepts();
+        }
     // }
     // if (user) {
     //     loginCheck(user)
