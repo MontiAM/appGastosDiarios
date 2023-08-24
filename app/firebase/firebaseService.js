@@ -8,13 +8,12 @@ import { db } from "./firebase.js"
 import { showMessage } from "../tooltips/showmessage.js";
 
 
-export const saveExpenses = async (date, concept, detail, amount) => {
+export const saveExpenses = async (date, concept, detail, amount, user) => {
     console.log(date, concept,detail,amount);
-    await addDoc(collection(db, 'expenses'), {date: date, concept: concept, detail:detail, amount: amount });
+    await addDoc(collection(db, 'expenses'), {date: date, concept: concept, detail:detail, amount: amount, user: user });
 } 
 
 export const saveConcept = async (concept) => {
-    console.log(concept);
     await addDoc(collection(db, 'concepts'), {concept: concept});
 }
 

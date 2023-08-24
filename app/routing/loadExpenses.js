@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded',  async () => {
     await selectConcepts();
 })
 
-export const loadExpenses = () => {
+export const loadExpenses = (user) => {
     expensesForm.addEventListener('submit', (e) => {
         e.preventDefault(e);
         let flagSave = true;
@@ -21,13 +21,12 @@ export const loadExpenses = () => {
             }
         })
 
-        console.log(expensesForm['expensesConcept'].value);
         if(flagSave) {
             const date = expensesForm['expensesDate'].value;
             const concept = expensesForm['expensesConcept'].value;
             const detail = expensesForm['expensesDetail'].value;
             const amount = expensesForm['expenseAmount'].value;
-            saveExpenses(date, concept, detail, amount);
+            saveExpenses(date, concept, detail, amount, user.email);
             document.getElementById("expensesForm").reset();
             showMessage(concept + ' guardado')
         }

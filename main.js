@@ -23,7 +23,7 @@ onAuthStateChanged(auth, async (user) => {
     if(user){
         if (user.email == 'montivero.marcio@gmail.com' || user.email == 'sanbmg@gmail.com') {
             loginCheck(user)
-            loadExpenses() 
+            loadExpenses(user) 
             showListConcepts();
         }
     // }
