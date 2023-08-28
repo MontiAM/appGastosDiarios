@@ -16,7 +16,6 @@ export const selectConcepts = async () => {
 }
 
 export const addSelectConcept = (concept) => {
-    
     const conceptsList = document.getElementById('expensesConcept');
     conceptsList.innerHTML += ` <option value="${concept}">${concept}</option>`
 }

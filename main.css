@@ -7,3 +7,14 @@ body {
     max-height: 100vh; 
     overflow-y: auto; 
 }
+
+.table-no-border td, .table-no-border th {
+    border: none;
+}
+.white-text {
+    color: white;
+}
+
+td {
+    font-size: 15px;
+}

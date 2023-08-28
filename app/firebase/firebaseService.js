@@ -40,3 +40,8 @@ export const deleteConcept = async (delConcept) => {
 const deletConc = async (docID) => {
     await deleteDoc(doc(db, "concepts", docID ));    
 }
+
+export const getExcepses = async () => {
+    const querySnapshot = await getDocs(collection(db, 'expenses'));
+    return querySnapshot;
+}

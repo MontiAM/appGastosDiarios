@@ -11,6 +11,9 @@ import './app/routing/insertConcepts.js'
 import './app/routing/listConcepts.js'
 import './app/routing/deleteConcept.js'
 import './app/routing/displayConcept.js'
+import './app/routing/listExpenses.js'
+
+import './app/helpers/helpers.js'
 
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
 import { auth } from './app/firebase/firebase.js'

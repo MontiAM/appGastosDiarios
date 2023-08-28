@@ -106,9 +106,26 @@
 
     <!-- Content Detail Expenses-->
     <div class="d-flex justify-content-center vh-100 pt-5 d-none content" id="detailExpenses">
-        <div class="col-lg-10 col-md-10 col-10 form-container m-4 logged-in">
-            Detalles de gastos (en produccion)
-        </div>
+        <!-- <div class="col-lg-10 col-md-10 col-10 form-container m-4 logged-in" > -->
+            <div class="container mt-3">
+                <h3>Listado</h3>
+                <div class="table-responsive">
+                    <table class="table table-hover table-no-border white-text">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Concepto</th>
+                                <th scope="col">Detalle</th>
+                                <th scope="col">Usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody  id="listDetailExpenses">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- </div> -->
     </div>
 
     <!-- Singup Modal -->
