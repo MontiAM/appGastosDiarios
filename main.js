@@ -21,6 +21,7 @@ import { loginCheck } from './app/login/loginCheck.js'
 
 import { loadExpenses } from './app/routing/loadExpenses.js'
 import { showListConcepts } from './app/routing/listConcepts.js'
+import { listExpenses } from './app/routing/listExpenses.js'
 
 onAuthStateChanged(auth, async (user) => {
     if(user){
@@ -28,6 +29,7 @@ onAuthStateChanged(auth, async (user) => {
             loginCheck(user)
             loadExpenses(user) 
             showListConcepts();
+            listExpenses();
         }
     // }
     // if (user) {

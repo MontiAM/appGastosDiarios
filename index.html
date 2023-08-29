@@ -108,7 +108,13 @@
     <div class="d-flex justify-content-center vh-100 pt-5 d-none content" id="detailExpenses">
         <!-- <div class="col-lg-10 col-md-10 col-10 form-container m-4 logged-in" > -->
             <div class="container mt-3">
-                <h3>Listado</h3>
+                <div class="d-flex justify-content-between mb-2">
+                    <h3>Listado</h3>
+                    <div>
+                        <button class="btn btn-primary" id="editListExpenses">Editar</button>
+                        <button class="btn btn-danger" id="deleteListExpenses">Borrar</button>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-no-border white-text">
                         <thead>

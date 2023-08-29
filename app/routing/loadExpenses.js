@@ -1,5 +1,6 @@
 import { saveExpenses } from "../firebase/firebaseService.js";
 import { showMessage } from "../tooltips/showmessage.js";
+import { addListExpenses } from "./listExpenses.js";
 import { selectConcepts } from "./selectConcepts.js";
 
 const expensesForm = document.getElementById('expensesForm');
@@ -7,8 +8,8 @@ window.addEventListener('DOMContentLoaded',  async () => {
     await selectConcepts();
 })
 
-export const loadExpenses = (user) => {
-    expensesForm.addEventListener('submit', (e) => {
+export const loadExpenses =  (user) => {
+    expensesForm.addEventListener('submit', async (e) => {
         e.preventDefault(e);
         let flagSave = true;
         let inputs = document.querySelectorAll('.input');
@@ -26,9 +27,10 @@ export const loadExpenses = (user) => {
             const concept = expensesForm['expensesConcept'].value;
             const detail = expensesForm['expensesDetail'].value;
             const amount = expensesForm['expenseAmount'].value;
-            saveExpenses(date, concept, detail, amount, user.email);
-            document.getElementById("expensesForm").reset();
+            const expense = await saveExpenses(date, concept, detail, amount, user.email);
+            addListExpenses(expense)
             showMessage(concept + ' guardado')
+            document.getElementById("expensesForm").reset();
         }
     })
 };

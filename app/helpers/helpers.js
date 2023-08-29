@@ -22,3 +22,7 @@ export const formatUser = (usr) => {
     const x = usr == 'montivero.marcio@gmail.com' ? 'Marcio' : 'Belu'; 
     return x
 }
+
+export const buildExpense = (date, concept, detail, amount, user, id) => {
+    return {date, concept, detail, amount, user, id}
+}

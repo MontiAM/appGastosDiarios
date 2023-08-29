@@ -6,21 +6,28 @@ import { collection,
 
 import { db } from "./firebase.js"
 import { showMessage } from "../tooltips/showmessage.js";
+import { buildExpense } from "../helpers/helpers.js";
 
+export const getExcepses = async () => {
+    const querySnapshot = await getDocs(collection(db, 'expenses'));
+    return querySnapshot;
+}
 
 export const saveExpenses = async (date, concept, detail, amount, user) => {
-    console.log(date, concept,detail,amount);
+    const newDocRef = doc(collection(db, 'expenses'));
+    const newDocId = newDocRef.id;
+    const expense = buildExpense(date, concept, detail, amount, user, newDocId);
     await addDoc(collection(db, 'expenses'), {date: date, concept: concept, detail:detail, amount: amount, user: user });
+    return expense
 } 
+
+export const deleteExpenses = (idExpense) => {
+    const docRef = doc(db, "expenses", idExpense);
+    deleteDoc(docRef)
+}
 
 export const saveConcept = async (concept) => {
     await addDoc(collection(db, 'concepts'), {concept: concept});
-}
-
-export const getConcepts = async () => {
-    const querySnapshot = await getDocs(collection(db, 'concepts'));
-    // console.log(querySnapshot);
-    return querySnapshot
 }
 
 export const deleteConcept = async (delConcept) => {
@@ -34,14 +41,15 @@ export const deleteConcept = async (delConcept) => {
             return;
         } 
     });
-    
 }
 
 const deletConc = async (docID) => {
     await deleteDoc(doc(db, "concepts", docID ));    
 }
 
-export const getExcepses = async () => {
-    const querySnapshot = await getDocs(collection(db, 'expenses'));
-    return querySnapshot;
+export const getConcepts = async () => {
+    const querySnapshot = await getDocs(collection(db, 'concepts'));
+    // console.log(querySnapshot);
+    return querySnapshot
 }
+
