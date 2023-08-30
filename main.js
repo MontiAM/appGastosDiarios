@@ -31,14 +31,8 @@ onAuthStateChanged(auth, async (user) => {
             showListConcepts();
             listExpenses();
         }
-    // }
-    // if (user) {
-    //     loginCheck(user)
-    //     loadExpenses()
-    //     showListConcepts();
 
     } else {
         loginCheck(user)
     }
 })
-// cambio

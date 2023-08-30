@@ -26,3 +26,4 @@ export const formatUser = (usr) => {
 export const buildExpense = (date, concept, detail, amount, user, id) => {
     return {date, concept, detail, amount, user, id}
 }
+

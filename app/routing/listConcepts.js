@@ -10,3 +10,4 @@ export const showListConcepts = async() => {
         displayConcept(concept.concept);
     });
 }
+

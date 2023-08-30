@@ -10,9 +10,9 @@ window.addEventListener('DOMContentLoaded',  async () => {
 
 export const loadExpenses =  (user) => {
     expensesForm.addEventListener('submit', async (e) => {
-        e.preventDefault(e);
+        e.preventDefault();
         let flagSave = true;
-        let inputs = document.querySelectorAll('.input');
+        let inputs = document.querySelectorAll('#expensesForm .input');
         inputs.forEach( input => {
             let labelElement = document.querySelector(`label[for="${input.name}"]`);
             if (!input.value.trim() && input.name !== 'concept') {
@@ -21,7 +21,6 @@ export const loadExpenses =  (user) => {
                 return;
             }
         })
-
         if(flagSave) {
             const date = expensesForm['expensesDate'].value;
             const concept = expensesForm['expensesConcept'].value;
@@ -30,7 +29,7 @@ export const loadExpenses =  (user) => {
             const expense = await saveExpenses(date, concept, detail, amount, user.email);
             addListExpenses(expense)
             showMessage(concept + ' guardado')
-            document.getElementById("expensesForm").reset();
+            // document.getElementById("expensesForm").reset();
         }
     })
 };

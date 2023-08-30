@@ -32,9 +32,9 @@
                     <li class="nav-item logged-out">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link logged-in menu-button" data-target="dailyExpenses" href="#">Carga gastos</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link logged-in menu-button" data-target="insertConcept" href="#">Carga conceptos</a>
                     </li>
@@ -50,10 +50,8 @@
     </nav>
 
     <!-- Content Daily Expenses-->
-    <div class="d-flex justify-content-center align-items-center vh-100 content" id="dailyExpenses">
+    <!-- <div class="d-flex justify-content-center align-items-center vh-100 content d-none" id="dailyExpenses">
         <div class="col-lg-5 col-md-8 col-10 form-container m-4 logged-in ds-none" >
-
-            <!-- col-lg-10 col-md-10 col-10 form-container m-4 logged-in -->
             <form id="expensesForm" class="pt-5">
                 <div class="mb-3 mt-3">
                     <label for="date" class="form-label">Fecha</label>
@@ -80,9 +78,9 @@
                 <button type="submit" class="btn btn-primary w-100 mb-4">Guardar</button>
             </form>
         </div>
-    </div>
+    </div> -->
     
-    <!-- Insert Concept Expens-->
+    <!-- Concept Insert Expens-->
     <div class="d-flex justify-content-center vh-100 pt-5 d-none content" id="insertConcept">
         <div class="col-lg-10 col-md-10 col-10  mt-4 logged-in">
             <p>Carga de conceptos (en produccion)</p>
@@ -104,13 +102,15 @@
         </div>
     </div>
 
-    <!-- Content Detail Expenses-->
-    <div class="d-flex justify-content-center vh-100 pt-5 d-none content" id="detailExpenses">
+    <!-- Content List Expenses-->
+    <div class="d-flex justify-content-center vh-100 pt-5 d-content " id="detailExpenses">
         <!-- <div class="col-lg-10 col-md-10 col-10 form-container m-4 logged-in" > -->
-            <div class="container mt-3">
+            <div class="container mt-3 logged-in">
                 <div class="d-flex justify-content-between mb-2">
                     <h3>Listado</h3>
+                    <button class="btn btn-primary" id="orderListExpenses">Ordenar</button>
                     <div>
+                        <button class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#dailyExpeseModal">Agregar</button>
                         <button class="btn btn-primary" id="editListExpenses">Editar</button>
                         <button class="btn btn-danger" id="deleteListExpenses">Borrar</button>
                     </div>
@@ -132,6 +132,86 @@
                 </div>
             </div>
         <!-- </div> -->
+    </div>
+
+    <!-- Daily Expense Modal -->
+    <div class="modal fade" id="dailyExpeseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carga de gasto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="expensesForm" class="">
+                        <div class="mb-3 mt-3">
+                            <label for="date" class="form-label">Fecha</label>
+                            <input name="date" type="date" class="form-control input" id="expensesDate">
+                            <!-- <div class="form-text">Ingrese la fecha.</div> -->
+                        </div>
+        
+                        <div class="mb-3">
+                            <label class="form-label" for="concept">Concepto</label>
+                            <select data-size="5" name="concept" class="form-control input" id="expensesConcept">
+                            </select>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="detail" class="form-label">Detalle</label>
+                            <input name="detail" class="form-control input" id="expensesDetail">
+                            <!-- <div class="form-text">Ingrese el detalle.</div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Monto</label>
+                            <input type="number" name="amount" class="form-control input" id="expenseAmount">
+                            <!-- <div class="form-text">Ingrese el monto.</div> -->
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-4">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Expense Modal -->
+    <div class="modal fade" id="editExpeseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Gasto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editExpensesForm" class="">
+                        <div class="mb-3 mt-3">
+                            <label for="date" class="form-label">Editar Fecha</label>
+                            <input name="date" type="date" class="form-control input" id="editExpensesDate">
+                            <!-- <div class="form-text">Ingrese la fecha.</div> -->
+                        </div>
+        
+                        <div class="mb-3">
+                            <label class="form-label" for="concept">Editar Concepto</label>
+                            <select data-size="5" name="concept" class="form-control input" id="editExpensesConcept">
+                            </select>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="detail" class="form-label">Editar Detalle</label>
+                            <input name="detail" class="form-control input" id="editExpensesDetail">
+                            <!-- <div class="form-text">Ingrese el detalle.</div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Editar Monto</label>
+                            <input type="number" name="amount" class="form-control input" id="editExpenseAmount">
+                            <!-- <div class="form-text">Ingrese el monto.</div> -->
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-4">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Singup Modal -->

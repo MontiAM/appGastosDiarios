@@ -1,5 +1,7 @@
 import { collection,
+         updateDoc,
          addDoc,
+         getDoc,
          getDocs,
          deleteDoc,
          doc  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
@@ -24,6 +26,19 @@ export const saveExpenses = async (date, concept, detail, amount, user) => {
 export const deleteExpenses = (idExpense) => {
     const docRef = doc(db, "expenses", idExpense);
     deleteDoc(docRef)
+}
+
+export const getExpense = async (id) => {
+    const docRef = doc(db, "expenses", id);
+    const docSnapshot = await getDoc(docRef)
+    return docSnapshot.data()
+}
+
+export const editExpense = async (expense) => {
+    const docRef = doc(db, "expenses", expense.id);
+    try { await updateDoc(docRef, expense)}
+    catch (error) { console.log('Error actualizando /' + error );}
+    
 }
 
 export const saveConcept = async (concept) => {

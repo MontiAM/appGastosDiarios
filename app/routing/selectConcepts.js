@@ -1,14 +1,27 @@
 import { getConcepts } from "../firebase/firebaseService.js";
 
-export const selectConcepts = async () => {
+export const selectConcepts = async (edit = false) => {
     const concepts = await getConcepts();
         if (concepts) {
             concepts.forEach(doc => {
                 let list = '';
                 const concept = doc.data();
-                const conceptslist = document.getElementById('expensesConcept');
-                list = ` <option value="${concept.concept}">${concept.concept}</option>`
-                conceptslist.innerHTML += list;
+                if (!edit) {
+                    const conceptslist = document.getElementById('expensesConcept');
+                    if (list = '') {
+                        conceptslist.innerHTML = '';    
+                    }
+                    list = ` <option value="${concept.concept}">${concept.concept}</option>`
+                    conceptslist.innerHTML += list;
+                } else {
+                    const conceptslist = document.getElementById('editExpensesConcept');
+                    if (list = '') {
+                        conceptslist.innerHTML = '';    
+                    }
+                    list = ` <option value="${concept.concept}">${concept.concept}</option>`
+                    conceptslist.innerHTML += list;
+                }
+                    
             });
         } else {
             showMessage('No existen conceptos')

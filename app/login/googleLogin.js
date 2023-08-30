@@ -13,7 +13,7 @@ googleButton.addEventListener('click', async () => {
         const signinModal = document.querySelector('#signinModal');
         const modal = bootstrap.Modal.getInstance(signinModal);
         modal.hide();
-
+        console.log(credentials.user);
         showMessage('Welcome ' + credentials.user.displayName)
 
     } catch (error) {
