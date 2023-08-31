@@ -1,0 +1,2 @@
+- Hacer dos solapas de botones. Una con Acciones y otra con Filtros
+- Ver tamaño de botones

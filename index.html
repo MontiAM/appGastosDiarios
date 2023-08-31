@@ -102,17 +102,19 @@
         </div>
     </div>
 
-    <!-- Content List Expenses-->
+    <!-- List Expenses-->
     <div class="d-flex justify-content-center vh-100 pt-5 d-content " id="detailExpenses">
         <!-- <div class="col-lg-10 col-md-10 col-10 form-container m-4 logged-in" > -->
             <div class="container mt-3 logged-in">
                 <div class="d-flex justify-content-between mb-2">
-                    <h3>Listado</h3>
-                    <button class="btn btn-primary" id="orderListExpenses">Ordenar</button>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <h3 class="mr-3">Listado</h3>
+                        <button class="ml-3 btn btn-primary btn-sm" id="orderListExpenses">Ordenar</button>
+                    </div>
                     <div>
-                        <button class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#dailyExpeseModal">Agregar</button>
-                        <button class="btn btn-primary" id="editListExpenses">Editar</button>
-                        <button class="btn btn-danger" id="deleteListExpenses">Borrar</button>
+                        <button class="btn btn-primary btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#dailyExpeseModal">Agregar</button>
+                        <button class="btn btn-primary btn-sm" id="editListExpenses">Editar</button>
+                        <button class="btn btn-danger btn-sm" id="deleteListExpenses">Borrar</button>
                     </div>
                 </div>
                 <div class="table-responsive">

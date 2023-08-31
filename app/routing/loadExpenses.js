@@ -27,9 +27,12 @@ export const loadExpenses =  (user) => {
             const detail = expensesForm['expensesDetail'].value;
             const amount = expensesForm['expenseAmount'].value;
             const expense = await saveExpenses(date, concept, detail, amount, user.email);
-            addListExpenses(expense)
-            showMessage(concept + ' guardado')
-            // document.getElementById("expensesForm").reset();
+            addListExpenses(expense);
+            showMessage(concept + ' guardado');
+            document.getElementById("expensesForm").reset();
+            const signinModal = document.querySelector('#dailyExpeseModal');
+            const modal = bootstrap.Modal.getInstance(signinModal);
+            modal.hide();
         }
     })
 };
