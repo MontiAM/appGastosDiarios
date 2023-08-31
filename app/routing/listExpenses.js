@@ -21,11 +21,11 @@ export const listExpenses = async () => {
     
         listDetailExpenses.innerHTML += `
                         <tr id="${expense.id}" name="expense">
-                            <td class="" name="date">${formatDate(expense.date)}</td>
-                            <td class="" name="amount">$${expense.amount}</td>
-                            <td class="" name="concept">${expense.concept}</td>
-                            <td class="" name="detail">${expense.detail}</td>
-                            <td class="" name="user">${formatUser(expense.user)}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="date">${formatDate(expense.date)}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="amount">$${expense.amount}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="concept">${expense.concept}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="detail">${expense.detail}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="user">${formatUser(expense.user)}</td>
                         </tr>`
     })
 }
@@ -34,11 +34,11 @@ export const addListExpenses = (expense) => {
     console.log(formatDate(expense.date));
     listDetailExpenses.innerHTML += `
                         <tr id="${expense.id}" name="expense">
-                            <td class="" name="date">${formatDate(expense.date)}</td>
-                            <td class="" name="amount">$${expense.amount}</td>
-                            <td class="" name="concept">${expense.concept}</td>
-                            <td class="" name="detail">${expense.detail}</td>
-                            <td class="" name="user">${formatUser(expense.user)}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="date">${formatDate(expense.date)}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="amount">$${expense.amount}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="concept">${expense.concept}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="detail">${expense.detail}</td>
+                            <td class="fs-6 fs-md-5 fs-sm-2" name="user">${formatUser(expense.user)}</td>
                         </tr>`
 }
 
