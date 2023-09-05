@@ -1,6 +1,6 @@
 # Aplicación de Gastos 💸
 
-Una aplicación sencilla y eficiente para rastrear tus gastos diarios. Creada con HTML, estilizada con Bootstrap, lógica en JavaScript y almacenamiento en Firebase. La misma esta desplegada en [github.pages]([https://www.google.com](https://montiam.github.io/appGastosDiarios/))
+Una aplicación sencilla y eficiente para rastrear tus gastos diarios. Creada con HTML, estilizada con Bootstrap, lógica en JavaScript y almacenamiento en Firebase. La misma esta desplegada en [github.pages](https://montiam.github.io/appGastosDiarios/))
 
 ## Contenido
 
